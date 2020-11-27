@@ -1,3 +1,5 @@
+package com.xinxing.excel;
+
 public class ExcelDataPO {
     private String projectNumber;
     private int devDeploy;
