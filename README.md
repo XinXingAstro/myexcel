@@ -1,2 +1,2 @@
-# myexcel
-处理excel表格的小工具
+# smaltools
+工作中可以用到的小工具集合
