@@ -124,11 +124,16 @@ public class MyExcel {
                 Row row = sheet.getRow(i);
                 if (row == null) continue;
                 String projectId = row.getCell(0).getStringCellValue().trim();
-                if (!map.containsKey(projectId)) continue;
-                int[] array = map.get(projectId);
-                row.createCell(6).setCellValue(array[0]);
-                row.createCell(7).setCellValue(array[1]);
-                row.createCell(8).setCellValue(array[2]);
+                if (!map.containsKey(projectId)) {
+                    row.createCell(6).setCellValue(0);
+                    row.createCell(7).setCellValue(0);
+                    row.createCell(8).setCellValue(0);
+                } else {
+                    int[] array = map.get(projectId);
+                    row.createCell(6).setCellValue(array[0]);
+                    row.createCell(7).setCellValue(array[1]);
+                    row.createCell(8).setCellValue(array[2]);
+                }
                 System.out.println("插入" + projectId + "数据");
             }
             in.close();
